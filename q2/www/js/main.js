@@ -1,3 +1,6 @@
+function myFunction() {
+ document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
 function validateEmail() {
   var email = document.getElementById("email").value;
 
@@ -14,33 +17,21 @@ function validateEmail() {
   return true;
 }
 
-function validateEmailNoRegex() {
-  var email = document.getElementById("email").value;
-
-  if (email == '') {
-    alert("Empty email.");
-    document.getElementById("email").focus();
-
-    return false;
-  }
-
-  return true;
-}
-
 function validateUsername() {
-  var username = document.getElementById("username").value;
-  var re = [^a-zA-Z0-9];
+  var username = document.getElementById("Username").value;
 
-  var test = re.test(username);
-
-  if (!test) {
-    alert("Invalid username.");
+  if (username == '') {
+    alert("Empty username.");
+    document.getElementById("username").focus();
 
     return false;
   }
 
   return true;
 }
+
+
+
 
 function validatePassword() {
   var password = document.getElementById("password").value;
@@ -69,7 +60,6 @@ function validateForm() {
 
   return true;
 }
-
 
 function showPassword() {
   var x = document.getElementById("password");

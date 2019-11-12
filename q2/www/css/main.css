@@ -51,6 +51,18 @@ input[type=text], input[type=tel], input[type=date], input[type=password], selec
 	box-shadow: rgba(10, 10, 10, .05) 0 1px 4px 0 inset;
 }
 
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
+}
 
 @media only screen and (max-width: 600px) {
 
