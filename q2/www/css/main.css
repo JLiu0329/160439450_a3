@@ -28,20 +28,35 @@ fieldset {
 
 input[type=submit] {
   font-family: "Proza Libre";
-  font-size: 1em;
+  font-size: 14px;
   font-weight: bold;
-  color: white;
+	color: white;
   letter-spacing: 0.2em;
-  border: none;
-  background-color: #428bca;
-  margin: 4px 2px;
+	border: solid;
+	border-width: 1px;
+	border-color: #007c89;
+  background-color: #007c89;
+
+  padding: 4px 16px;
+}
+
+input[type=submit]:disabled {
+  font-family: "Proza Libre";
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(36,28,21, 0.5);
+  letter-spacing: 0.2em;
+	border: solid;
+	border-width: 1px;
+	border-color: rgba(36,28,21, 0.5);
+	background-color: white;
   padding: 4px 16px;
 }
 
 input[type=text], input[type=tel], input[type=date], input[type=password], select, textarea {
 	font-family: "Proza Libre";
 	font-size: 14px;
-	font-color: #241c15
+	font-color: #241c15;
   display: block;
   min-height: 50px;
   width: 95%;
@@ -51,24 +66,49 @@ input[type=text], input[type=tel], input[type=date], input[type=password], selec
 	box-shadow: rgba(10, 10, 10, .05) 0 1px 4px 0 inset;
 }
 
-.field-icon {
-  float: right;
-  margin-left: -25px;
-  margin-top: -25px;
-  position: relative;
-  z-index: 2;
+fieldLabel {
+	padding: 4px;
+	font-weight: bold;
+
 }
 
-.container{
-  padding-top:50px;
-  margin: auto;
+.Container {
+	width: 70%;
+	margin: auto;
 }
+
+.LogoContainer{
+	float: left;
+	width: 33.33%;
+	padding-top: 50px;
+}
+
+.formContainer{
+	float: right;
+	max-width: 500px;
+	width: 66.66%;
+	margin:auto;
+	padding-top: 50px;
+}
+
 
 @media only screen and (max-width: 600px) {
 
 img {
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 	filter: grayscale(100%);
+}
+
+.LogoContainer{
+	float: none;
+	padding-top: 50px;
+	width: 100%;
+	margin-left: 30%;
+}
+.formContainer{
+	float: right;
+	max-width: 500px;
+	width: 100%;
 }
 
 }

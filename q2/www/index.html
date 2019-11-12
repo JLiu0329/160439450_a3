@@ -17,15 +17,31 @@
 		<!--====== Style css ======-->
 		<link rel="stylesheet" href="css/main.css">
 
-				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 
 		<!--====== javascript ======-->
 
 		<script src="js/main.js"> </script>
-		<script src="https://kit.fontawesome.com/191fd54858.js" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script type='text/javascript' src='http://code.jquery.com/jquery.min.js'></script>
+
+		<script type='text/javascript'>
+			$(function() {
+				$("form").change(function() {
+					if (checkEmpty()) {
+						//Check to see if there is any text entered
+						// If there is no text within the input ten disable the button
+						$('.enableOnInput').prop('disabled', true);
+					} else {
+						//If there is text in the input, then enable the button
+						$('.enableOnInput').prop('disabled', false);
+					}
+				});
+			});
+		</script>
 
 
 	</head>
@@ -35,54 +51,71 @@
 
 <body>
 
+	<div class="Container">
 
-	<img src="img/logo-color.png" alt="MailChimp Logo" width="150px" class="logoImage">
-	<h1>
-		Get started with your account
-	</h1>
-
-	Find your people. Engage your customers. Build your brand.
-	Do it all with FakeChimp’s Marketing Platform.
+		<div class="LogoContainer">
+			<img src="img/logo-color.png" alt="MailChimp Logo" width="120px" class="logoImage">
+		</div>
 
 
-	<form onsubmit="return validateForm();" action="http://cp202-server.appspot.com/register" method="post" enctype="multipart/form-data">
-		<p>
-			Email: <input type="text" onchange="return validateEmail();" name="email" id="email">
-		</p>
-		<p>
-			Username: <input type="text" onchange="return validateUsername();" name="username" id="username">
-		</p>
+		<div class="formContainer">
+			<h1>
+				Get started with your account
+			</h1>
 
-		<p>
+			Find your people. Engage your customers. Build your brand.
+			Do it all with FakeChimp’s Marketing Platform.
 
 
-			Password: <input type="password" onchange="return validatePassword();" name="password" id="password">
-			<a href="#" style="color: " onclick="showPassword()"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>
+			<form onsubmit="return validateForm();" action="http://cp202-server.appspot.com/register" method="post" enctype="multipart/form-data">
+				<p>
+					<fieldLabel> Email
+					</fieldLabel>
+					<input type="text" name="email" id="email">
+				</p>
 
 
-		</p>
+				<p>
+					<fieldLabel>
+						Username
+					</fieldLabel>
+					<input type="text" name="username" id="username">
+				</p>
 
-		<p>
-			<input type="submit" value="Get Started" id="register">
-		</p>
+				<p>
+
+					<fieldLabel>
+						Password
+					</fieldLabel>
+
+					<a href="#" style="color:#007c89" onclick="showPassword()"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>
+					<input type="password" name="password" id="password">
 
 
-		<p>
-			By clicking the “Get Started!” button, you are creating a
-			FakeChimp account.
-		</p>
+				</p>
 
-		<input type="hidden" name="student_id" id="160439450" value="160439450"></input>
-	</form>
+				<p>
+					<input type="submit" value="Get Started" id="register" class='enableOnInput' disabled="disabled" />
+				</p>
 
 
+				<p>
+					By clicking the “Get Started!” button, you are creating a
+					FakeChimp account.
+				</p>
 
-	<footer>
-		©2019 All Rights Reserved. FakeChimp® is a registered
-		trademark of WLUCP202 Class.
+				<input type="hidden" name="student_id" id="160439450" value="160439450"></input>
+			</form>
 
-	</footer>
 
+
+			<footer>
+				©2019 All Rights Reserved. FakeChimp® is a registered
+				trademark of WLUCP202 Class.
+
+			</footer>
+		</div>
+	</div>
 </body>
 
 </html>

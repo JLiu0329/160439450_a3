@@ -9,7 +9,7 @@ function validateEmail() {
   var test = re.test(String(email).toLowerCase());
 
   if (!test) {
-    alert('Invalid email.')
+    alert('Please enter a valid email address.')
 
     return false;
   }
@@ -18,10 +18,10 @@ function validateEmail() {
 }
 
 function validateUsername() {
-  var username = document.getElementById("Username").value;
+  var username = document.getElementById("username").value;
 
   if (username == '') {
-    alert("Empty username.");
+    alert("Please enter a valid Username");
     document.getElementById("username").focus();
 
     return false;
@@ -37,7 +37,7 @@ function validatePassword() {
   var password = document.getElementById("password").value;
 
   if (password == '') {
-    alert("Empty password.");
+    alert("Please enter a valid Password");
 
     return false;
   }
@@ -68,4 +68,13 @@ function showPassword() {
   } else {
     x.type = "password";
   }
+}
+
+function checkEmpty() {
+  var email = document.getElementById("email").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+
+  return email == '' || username == '' || password == '';
 }
