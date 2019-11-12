@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!--====== Required meta tags ======-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+		<!--====== Title ======-->
+		<title> FakeChimp’s Registration Form w/ Image </title>
+
+
+		<!--====== Style css ======-->
+		<link rel="stylesheet" href="css/main.css">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+		<!--====== javascript ======-->
+
+		<script src="js/main.js"> </script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script type='text/javascript' src='http://code.jquery.com/jquery.min.js'></script>
+
+		<script type='text/javascript'>
+			$(function() {
+				$("form").change(function() {
+					if (checkEmpty()) {
+						//Check to see if there is any text entered
+						// If there is no text within the input ten disable the button
+						$('.enableOnInput').prop('disabled', true);
+					} else {
+						//If there is text in the input, then enable the button
+						$('.enableOnInput').prop('disabled', false);
+					}
+				});
+			});
+		</script>
+
+
+	</head>
+
+
+	<!--====== BODY ======-->
+
+<body>
+
+	<div class="Container">
+
+		<div class="LogoContainer">
+			<img src="img/logo-color.png" alt="MailChimp Logo" width="120px" class="logoImage">
+		</div>
+
+
+		<div class="formContainer">
+			<h1>
+				Get started with your account
+			</h1>
+
+			Find your people. Engage your customers. Build your brand.
+			Do it all with FakeChimp’s Marketing Platform.
+
+
+			<form onsubmit="return validateForm();" action="http://cp202-server.appspot.com/register_with_image" method="post" enctype="multipart/form-data">
+				<p>
+					<fieldLabel> Email
+					</fieldLabel>
+					<input type="text" name="email" id="email">
+				</p>
+
+
+				<p>
+					<fieldLabel>
+						Country
+					</fieldLabel>
+					<select name="country" id="country">
+						<option value="Canada">Canada</option>
+						<option value="United States">United States</option>
+					</select>
+				</p>
+
+				<p>
+
+					<fieldLabel>
+						Description
+					</fieldLabel>
+
+					<input type="hidden" value="description" id="description">
+					<textarea name="description" rows="4" id="description"></textarea>
+
+
+				</p>
+
+				<fieldLabel>
+					Image
+				</fieldLabel>
+
+				<p>
+					<input type="file" name="avatarImage" id="avatarImage">
+				</p>
+
+
+				<p>
+					<input type="submit" value="Get Started" id="register" class='enableOnInput' disabled="disabled" />
+				</p>
+
+
+				<p>
+					By clicking the “Get Started!” button, you are creating a
+					FakeChimp account.
+				</p>
+
+				<input type="hidden" name="student_id" id="160439450" value="160439450"></input>
+			</form>
+
+
+
+			<footer>
+				©2019 All Rights Reserved. FakeChimp® is a registered
+				trademark of WLUCP202 Class.
+
+			</footer>
+		</div>
+	</div>
+</body>
+
+</html>
