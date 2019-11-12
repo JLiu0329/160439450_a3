@@ -1,8 +1,0 @@
-<form on submit = "return validateForm();"
- action = :httpL//cp202-server.appspot.com/register_with_image"
- method = "post"
- enctype = "multitype/form-data"
-
-
- input type = file
- input type = text
